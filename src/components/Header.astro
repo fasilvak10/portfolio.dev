@@ -41,45 +41,6 @@
 <!-- Añadir un padding-top al primer elemento después del header para compensar el espacio del navbar fixed -->
 <div class="pt-[80px]"></div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navbar = document.getElementById('navbar');
-    const navbarBg = document.getElementById('navbar-bg');
-    const navbarPill = document.getElementById('navbar-pill');
-    
-    // Toggle del menú móvil
-    mobileMenuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('flex');
-    });
-    
-    // Efecto al scrollear
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        // Cuando se hace scroll
-        navbarBg.classList.add('backdrop-blur-md');
-        navbarPill.classList.remove('bg-transparent');
-        navbarPill.classList.add('bg-gray-900/80');
-      } else {
-        // Cuando está en la parte superior
-        navbarBg.classList.remove('backdrop-blur-md');
-        navbarPill.classList.remove('bg-gray-900/80');
-        navbarPill.classList.add('bg-transparent');
-      }
-    });
-    
-    // Inicializar el estado del navbar
-    if (window.scrollY > 10) {
-      navbarBg.classList.add('backdrop-blur-md');
-      navbarPill.classList.add('bg-gray-900/80');
-    } else {
-      navbarPill.classList.add('bg-transparent');
-    }
-  });
-</script>
-
 <style>
   /* Estilos adicionales para el navbar */
   #navbar-pill {
