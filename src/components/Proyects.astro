@@ -91,11 +91,11 @@ const PROYECTS = [
       <article class="mb-2">
         <h3 class="text-xl font-semibold text-yellow-200 mb-2 ">{title}</h3>
         <p class="text-lg mb-4 text-pretty"> {description}</p>
-        <ul class="flex gap-x-2 flex-row mb-2">
+        <ul class="flex flex-wrap gap-2 mb-2">
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                class={`flex items-center gap-2 rounded-full text-xs ${tag.class} py-1 px-2`}
               >
                 <tag.icon class="size-4" />
                 {tag.name}

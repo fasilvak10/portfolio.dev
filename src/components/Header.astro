@@ -1,14 +1,102 @@
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-  <span></span>
+<header id="navbar" class="fixed top-0 left-0 right-0 flex justify-center items-center py-5 w-full mx-auto z-50 transition-all duration-300">
+  <div id="navbar-bg" class="absolute inset-0 opacity-0 transition-all duration-500"></div>
+  
+  <!-- Contenedor principal con forma de píldora -->
+  <div id="navbar-pill" class="relative flex justify-between items-center w-full max-w-[800px] mx-auto px-8 py-3 rounded-full transition-all duration-300">
+    
+    <!-- Logo -->
+    <div class="logo-container gap-3 text-2xl flex items-center z-10">
+      <img
+        width="30"
+        height="30"
+        src="https://img.icons8.com/stickers/50/finn.png"
+        alt="finn"
+      />
+      <a href="#" target="" class="logo text-s text-white"><i>f</i>asilva.dev</a>
+    </div>
 
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <a href="#top">Inicio</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#sobre-mi">Sobre mi</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+    <!-- Navegación -->
+    <nav id="nav-menu" class="hidden md:flex md:flex-row md:gap-x-10 z-10">
+      <a href="#proyects" class="text-white/80 hover:text-white transition-colors">Proyectos</a>
+      <a href="#experiencia" class="text-white/80 hover:text-white transition-colors">Experiencia</a>
+      <a href="#contacto" class="text-white/80 hover:text-white transition-colors">Contacto</a>
+    </nav>
+    
+    <!-- Botón de menú móvil -->
+    <button id="mobile-menu-toggle" class="md:hidden z-10">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="absolute top-full left-0 right-0 mt-2 hidden flex-col items-center bg-gray-900/90 backdrop-blur-md rounded-lg py-4 z-20">
+      <a href="#proyects" class="py-2 text-white/80 hover:text-white">Proyectos</a>
+      <a href="#experiencia" class="py-2 text-white/80 hover:text-white">Experiencia</a>
+      <a href="#contacto" class="py-2 text-white/80 hover:text-white">Contacto</a>
+    </div>
+  </div>
 </header>
 
+<!-- Añadir un padding-top al primer elemento después del header para compensar el espacio del navbar fixed -->
+<div class="pt-[80px]"></div>
 
-<!-- src="" -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('navbar');
+    const navbarBg = document.getElementById('navbar-bg');
+    const navbarPill = document.getElementById('navbar-pill');
+    
+    // Toggle del menú móvil
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+    
+    // Efecto al scrollear
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        // Cuando se hace scroll
+        navbarBg.classList.add('backdrop-blur-md');
+        navbarPill.classList.remove('bg-transparent');
+        navbarPill.classList.add('bg-gray-900/80');
+      } else {
+        // Cuando está en la parte superior
+        navbarBg.classList.remove('backdrop-blur-md');
+        navbarPill.classList.remove('bg-gray-900/80');
+        navbarPill.classList.add('bg-transparent');
+      }
+    });
+    
+    // Inicializar el estado del navbar
+    if (window.scrollY > 10) {
+      navbarBg.classList.add('backdrop-blur-md');
+      navbarPill.classList.add('bg-gray-900/80');
+    } else {
+      navbarPill.classList.add('bg-transparent');
+    }
+  });
+</script>
+
+<style>
+  /* Estilos adicionales para el navbar */
+  #navbar-pill {
+    background-color: #3e3ead8f;
+    
+   
+  }
+  
+  /* Gradiente superior opcional como en tu segunda imagen */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    /* background: linear-gradient(90deg, #4338ca, #7e22ce); */
+    z-index: 100;
+  }
+</style>
