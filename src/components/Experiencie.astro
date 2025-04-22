@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Actualidad...",
+    title: "Coordinación técnica proyectos Economía del Conocimiento",
+    description: "Asignar y coordinar tareas del área de trabajo. Asesorar a la autoridad política en la toma de decisiones. Evaluación de impacto. Confección de herramientas de seguimiento. Elaboración de documentos estadísticos. ",
+    link: "#",
+  },
+  {
+    date: "February 2021",
+    title: "Data-table to contability report and control",
+    description: "Evaluación Técnica de trámites. Análisis fiscal y contable de empresas de Software. Tareas de seguimiento y control sobre el cumplimiento de solicitudes. Atención al público",
+    link: "#",
+  },
+  {
+    date: "April 2019",
+    title: "Backend development cross table data in google sheets",
+    description: "Desarrollo de aplicación sistema, flujo trámites regimen",
+    link: "#",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

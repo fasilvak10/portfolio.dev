@@ -1,0 +1,118 @@
+---
+import GoogleIcon from "./icons/GoogleIcon.astro";
+import BootstrapIcon from "./icons/BootstrapIcon.astro";
+import LookerStudioIcon from "./icons/LookerStudioIcon.astro";
+import JavascriptIcon from "./icons/JavascriptIcon.astro";
+import BigQueryIcon from "./icons/BigQueryIcon.astro";
+import PowerBi from "./icons/PowerBi.astro";
+
+const TAGS = {
+  GOOGLE: {
+    name: "Google Apps Script",
+    class: "bg-black text-white",
+    icon: GoogleIcon,
+  },
+
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-black text-white",
+    icon: BootstrapIcon,
+  },
+
+  LOOKERSTUDIO: {
+    name: "LookerStudio",
+    class: "bg-black text-white",
+    icon: LookerStudioIcon,
+  },
+
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JavascriptIcon,
+  },
+  BIGQUERY: {
+    name: "Big Query",
+    class: "bg-black text-white",
+    icon: BigQueryIcon,
+  },
+  POWERBI: {
+    name: "Power BI",
+    class: "bg-black text-white",
+    icon: PowerBi,
+  },
+};
+
+const PROYECTS = [
+  {
+    title: "Género Power BI Dashboard",
+    description:
+      "Tablero de control para Seguimiento de Indicadores de Género en Software",
+    link: "https://script.google.com/macros/s/AKfycbzSAmXhzDv1iFwSFNtrC3TyaOg3rxIiwVJJIm-rpfRoJOW5MdUF3_XmdDRV13yHJBZp9A/exec",
+    github: "#",
+    images: ["proyects/295shots_so.png", "proyects/659shots_so.png"],
+    tags: [TAGS.POWERBI, TAGS.BIGQUERY],
+  },
+  {
+    title: "Software Contable Integrado a Google",
+    description:
+      "Sistema Contable. Reglas de Negocio. Genera Formularios para ser Consumidos por ARCA",
+    link: "https://script.google.com/macros/s/AKfycbzSAmXhzDv1iFwSFNtrC3TyaOg3rxIiwVJJIm-rpfRoJOW5MdUF3_XmdDRV13yHJBZp9A/exec",
+    github: "#",
+    images: ["proyects/636shots_so.png", "proyects/699shots_so.png"],
+    tags: [TAGS.GOOGLE, TAGS.JAVASCRIPT, TAGS.BIGQUERY, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "BMO - Sistema de Gestión para Programa Gubernamental",
+    description:
+      "Web table create to solve tasks on public administration program. The proyect was develop with conventional stack's dev in google script apps.",
+    link: "#",
+    github: "#",
+    images: ["proyects/24shots_so.png", "proyects/202shots_so.png"],
+    tags: [TAGS.GOOGLE, TAGS.JAVASCRIPT, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "Dashboard Public Policy",
+    description:
+      "Dashboard con datos dinámicos creada a partir de Loocker Studio. Conectada en tiempo real con recursos del área, datos en tiempo real.",
+    link: "https://script.google.com/macros/s/AKfycbzSAmXhzDv1iFwSFNtrC3TyaOg3rxIiwVJJIm-rpfRoJOW5MdUF3_XmdDRV13yHJBZp9A/exec",
+    github: "#",
+    images: ["proyects/163shots_so.png"],
+    tags: [TAGS.LOOKERSTUDIO, TAGS.BIGQUERY],
+  },
+
+ 
+];
+---
+
+{
+  PROYECTS.map(({ images, title, description, tags }) => (
+    <>
+      <div class="mb-10">
+      <article class="mb-2">
+        <h3 class="text-xl font-semibold text-yellow-200 mb-2 ">{title}</h3>
+        <p class="text-lg mb-4 text-pretty"> {description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </article>
+
+      {images.map((img) => (
+        <img
+          class="rounded shadow-2x1 shadow-white/10 mb-3"
+          src={img}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+      ))}
+      </div>
+    </>
+  ))
+}
