@@ -16,13 +16,13 @@ import Proyects from "../components/Proyects.astro";
   description="Contrata a fasilva para un desarrollo a medida"
 >
   <main class="px-4">
-    <SectionContainer class="py-24 lg:py-32">
+    <SectionContainer class="py-24 lg:py-32" id="home">
       <div
         class="flex flex-col lg:flex-row items-center justify-between gap-10"
       >
         <!-- Texto a la izquierda -->
         <div class="text-center lg:text-left max-w-xl">
-          <p class="text-sm text-white/70 mb-2">Frontend Developer</p>
+          <p class="text-sm text-white/70 mb-2">Data Analytic & Developer</p>
           <h2 class="text-blue-400 font-semibold text-lg mb-1">
             Google Script Specialist
           </h2>
@@ -30,9 +30,7 @@ import Proyects from "../components/Proyects.astro";
             Facundo Silva
           </h1>
           <p class="text-base text-white/90 mb-6 leading-relaxed">
-            Politólogo y Desarrollador JavaScript sobre tecnologías de Google,
-            Next JS, React, Node. También trabajo con bases de datos SQL, Power
-            BI y Python.
+            Political scientist and JavaScript developer working with Google technologies, Next JS, React, and Node. I also work with SQL databases, Power BI, and Python.
           </p>
           <nav class="flex flex-wrap gap-4 justify-center lg:justify-start">
             <SocialPill href="https://github.com/fasilvak10">
@@ -60,18 +58,18 @@ import Proyects from "../components/Proyects.astro";
       </div>
     </SectionContainer>
 
-    <SectionContainer id="experiencia">
+    <SectionContainer id="experience">
       <h2 class="text-3xl font-bold mb-5 flex items-center gap-x-3">
         <BriefCase class="size-7" />
-        Experiencia
+        Experience
       </h2>
       <Experiencie class="" />
     </SectionContainer>
 
-    <SectionContainer id="experiencia">
+    <SectionContainer id="projects">
       <h2 class="text-3xl font-bold mb-5 flex items-center gap-x-3">
         <CodeIcon class="size-7" />
-        Proyectos
+        Projects
       </h2>
       <Proyects class="" />
     </SectionContainer>
