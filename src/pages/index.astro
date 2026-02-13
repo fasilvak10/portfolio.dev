@@ -24,13 +24,15 @@ import Proyects from "../components/Proyects.astro";
         <div class="text-center lg:text-left max-w-xl">
           <p class="text-sm text-white/70 mb-2">Data Analytic & Developer</p>
           <h2 class="text-blue-400 font-semibold text-lg mb-1">
-            Google Script Specialist
+            Google Development Specialist
           </h2>
           <h1 class="text-white text-4xl md:text-5xl font-bold mb-4">
             Facundo Silva
           </h1>
           <p class="text-base text-white/90 mb-6 leading-relaxed">
-            Political scientist and JavaScript developer working with Google technologies, Next JS, React, and Node. I also work with SQL databases, Power BI, and Python.
+            Political scientist, Data Analyst and JavaScript developer working with Google
+            technologies, Next JS, React, and Node. I also work with Big Query, SQL
+            databases, Power BI, and Python.
           </p>
           <nav class="flex flex-wrap gap-4 justify-center lg:justify-start">
             <SocialPill href="https://github.com/fasilvak10">
@@ -49,11 +51,66 @@ import Proyects from "../components/Proyects.astro";
 
         <!-- Imagen a la derecha -->
         <div class="flex justify-center lg:justify-end">
+          <div class="w-72 h-72 rounded-full overflow-hidden border-4 border-white/10 shadow-xl aspect-square">
+            <img
+              src="/proyects/hero_section_image.jpg"
+              alt="Facundo Silva"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="education" >
+      <h2 class="text-3xl font-bold mb-12 text-center">
+        Education & Certificates
+      </h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-10 items-center text-center"
+      >
+        <!-- UBA -->
+        <div class="flex flex-col items-center">
           <img
-            src="/proyects/hero-img-2.png"
-            alt="Facundo Silva"
-            class="rounded-full w-25 object-cover shadow-xl border-4 border-white/10"
+            src="/proyects/uba.png"
+            alt="UBA"
+            class="w-28 h-28 object-contain mb-5"
           />
+          <h3 class="text-white text-xl font-semibold">Political Scientist</h3>
+        </div>
+
+        <!-- San Andrés -->
+        <div class="flex flex-col items-center">
+          <img
+            src="/proyects/san-andres.png"
+            alt="Universidad de San Andrés"
+            class="w-28 h-28 object-contain mb-5"
+          />
+          <h3 class="text-white text-xl font-semibold">
+            Master's in Public Policy
+          </h3>
+        </div>
+
+        <!-- Digital House -->
+        <div class="flex flex-col items-center">
+          <img
+            src="/proyects/digital-house.avif"
+            alt="Digital House"
+            class="w-28 h-28 object-contain mb-5 filter brightness-0 invert"
+          />
+          <h3 class="text-white text-xl font-semibold">
+            Javascript Developer
+          </h3>
+        </div>
+
+        <!-- Google Certificate -->
+        <div class="flex flex-col items-center">
+            <a href="https://www.credly.com/badges/e8c4fd31-3d3c-4e1e-92ad-3a3c5b7a76a9" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-105">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud Data Analytics Certificate" class="w-28 h-28 object-contain mb-5" />
+            </a>
+            <h3 class="text-white text-xl font-semibold">
+                Google Cloud Data Analytics
+            </h3>
         </div>
       </div>
     </SectionContainer>
